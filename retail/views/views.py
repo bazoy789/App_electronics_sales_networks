@@ -1,13 +1,12 @@
 from typing import Any
 
 from django.contrib.auth import get_user_model, logout
+from django.contrib.auth.models import User
 from rest_framework import viewsets, generics, permissions, status
 from rest_framework.response import Response
 
 from retail.models import Contacts, Products
 from retail.serializers import ContactsSerializer, ProductsSerializer, RegistrationSerializer, UserSerializer
-
-USER_MODEL = get_user_model()
 
 
 class ProductsView(viewsets.ModelViewSet):
@@ -21,13 +20,13 @@ class ContactsView(viewsets.ModelViewSet):
 
 
 class RegistrationView(generics.CreateAPIView):
-    queryset = USER_MODEL
+    queryset = User
     permission_classes = [permissions.AllowAny]
     serializer_class = RegistrationSerializer
 
 
 class ProfileView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = USER_MODEL.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 

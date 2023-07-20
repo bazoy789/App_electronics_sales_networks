@@ -1,13 +1,11 @@
 from typing import Optional, Any
 
-from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 
 from retail.models import Factory, Contacts, Products, RetailNetwork, IndividualEntrepreneur
-
-USER_MODEL = get_user_model()
 
 
 class ContactsSerializer(serializers.ModelSerializer):
@@ -84,7 +82,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
     password = PasswordField(required=True)
 
     class Meta:
-        model = USER_MODEL
+        model = User
         read_only_fields = ("id",)
         fields = ("id", "username", "password")
 
@@ -96,5 +94,5 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = USER_MODEL
+        model = User
         fields = ("id", "username", "first_name", "last_name", "email")
