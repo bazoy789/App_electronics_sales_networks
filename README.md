@@ -7,5 +7,4 @@
 
 Запуск:
 - pip install -r requirements
-- python manage.py migrate
-- python manage.py runserver
+- docker-compose up -d(postgres, migrations, api)
