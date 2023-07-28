@@ -1,9 +1,6 @@
-# Аттестация
+# App_electronics_sales_networks
 
-## Шеенков Н.С.
-
-
-### Стек (Python-3.11, Django, Postgres)
+### Стек (Python-3.11, Django, DRF, PostgreSQL)
 
 Запуск:
 - pip install -r requirements
