@@ -1,6 +1,6 @@
 # App_electronics_sales_networks
 
-## Description
+### Description
 - Backend разработан для сети продаж экектроники
 
 ### Technologies 
