@@ -3,8 +3,12 @@
 ## Description
 - Backend разработан для сети продаж экектроники
 
-### Стек (Python-3.11, Django, DRF, PostgreSQL)
+### Technologies 
+- Python
+- Django
+- DRF
+- PostgreSQL
 
-Запуск:
+### Run:
 - pip install -r requirements
 - docker-compose up -d(postgres, migrations, api)
